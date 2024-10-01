@@ -1,0 +1,34 @@
+{
+
+"investor": [
+    {
+        "key": "InvestorId",
+        "type": "keyid",
+        "UIComponentTitle": "Investor"
+    }
+        ,{
+        "key": "Name",
+        "label": "Name",
+        "type": "text",
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+    ,{
+        "key": "ContactNumber",
+        "label": "ContactNumber",
+        "type": "text",
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+    ,{
+        "key": "PortfolioSize",
+        "label": "PortfolioSize",
+        "type": "text",
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+]
+}

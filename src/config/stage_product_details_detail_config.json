@@ -1,0 +1,40 @@
+{
+
+"stage": [
+    {
+        "key": "StageId",
+        "type": "keyid",
+        "UIComponentTitle": "Stage"
+    }
+        ,{
+        "key": "Name",
+        "label": "Name",
+        "type": "dropdown",
+        "valueId": "Value",
+        "nameId": "Name",
+        "contentId": "Name",
+        "source": "StageName",
+        "enum": true,
+        "editable": true,
+        "validators": [
+             "isNumber"
+        ]
+                            }
+    ,{
+        "key": "Description",
+        "label": "Description",
+        "type": "text",
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+    ,{
+        "key": "CriteriaForNextStage",
+        "label": "CriteriaForNextStage",
+        "type": "text",
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+]
+}

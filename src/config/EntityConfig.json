@@ -1,0 +1,432 @@
+{
+        "fundinground": [
+                        {
+                            "key": "RoundId",
+                            "type": "keyid"
+                        },
+                        {
+                            "key": "RoundType",
+                            "label": "RoundType",
+                            "type": "dropdown",
+                            "valueId": "Value",
+                            "nameId": "Name",
+                            "contentId": "Name",
+                            "source": "Model.StageName",
+                            "editable": true,
+                            "validators": [
+                                "required",
+                                "isNumber"
+                            ],
+                            "validationMessages": [
+                                "RoundType is required"
+                            ]
+                        },
+                        {
+                            "key": "DateOfFunding",
+                            "label": "DateOfFunding",
+                            "type": "date",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "DateOfFunding is required"
+                            ]
+                        },
+                        {
+                            "key": "AmountRaised",
+                            "label": "AmountRaised",
+                            "type": "dropdown",
+                            "valueId": "Value",
+                            "nameId": "Name",
+                            "contentId": "Name",
+                            "source": "Edm.Decimal",
+                            "editable": true,
+                            "validators": [
+                                "required",
+                                "isNumber"
+                            ],
+                            "validationMessages": [
+                                "AmountRaised is required"
+                            ]
+                        },
+                        {
+                            "key": "Status",
+                            "label": "Status",
+                            "type": "dropdown",
+                            "valueId": "Value",
+                            "nameId": "Name",
+                            "contentId": "Name",
+                            "source": "Model.RoundStatus",
+                            "editable": true,
+                            "validators": [
+                                "required",
+                                "isNumber"
+                            ],
+                            "validationMessages": [
+                                "Status is required"
+                            ]
+                        },
+                        {
+                            "key": "TargetAmount",
+                            "label": "TargetAmount",
+                            "type": "dropdown",
+                            "valueId": "Value",
+                            "nameId": "Name",
+                            "contentId": "Name",
+                            "source": "Edm.Decimal",
+                            "editable": true,
+                            "validators": [
+                                "required",
+                                "isNumber"
+                            ],
+                            "validationMessages": [
+                                "TargetAmount is required"
+                            ]
+                        },
+                        {
+                            "key": "PostValuation",
+                            "label": "PostValuation",
+                            "type": "dropdown",
+                            "valueId": "Value",
+                            "nameId": "Name",
+                            "contentId": "Name",
+                            "source": "Edm.Decimal",
+                            "editable": true,
+                            "validators": [
+                                "required",
+                                "isNumber"
+                            ],
+                            "validationMessages": [
+                                "PostValuation is required"
+                            ]
+                        },
+                    {
+                        "key": "FundingRoundLeadInvestor",
+                        "type": "keyid"
+                    },
+                                    {
+                        "key": "FundingRoundInvestors",
+                        "type": "keyid"
+                    },
+                                    {
+                        "key": "FundingRoundFundedStartup",
+                        "type": "keyid"
+                    },
+                                    {
+                        "key": "FundingRoundStartupLogoIcon",
+                        "type": "keyid"
+                    },
+                    {
+                        "key": "StartupLogoIcon",
+                        "label": "StartupLogoIcon",
+                        "width": "30%",
+                        "type": "doc",
+                        "accept": ".JPG,.JPEG,.PNG",
+                        "editable": true,
+                        "validators": [
+                            "required"
+                        ],
+                        "validationMessages": [
+                            "FundingRound StartupLogoIcon is required"
+                        ]
+                    }
+                        ]
+,        "stage": [
+                        {
+                            "key": "StageId",
+                            "type": "keyid"
+                        },
+                        {
+                            "key": "Name",
+                            "label": "Name",
+                            "type": "dropdown",
+                            "valueId": "Value",
+                            "nameId": "Name",
+                            "contentId": "Name",
+                            "source": "Model.StageName",
+                            "editable": true,
+                            "validators": [
+                                "required",
+                                "isNumber"
+                            ],
+                            "validationMessages": [
+                                "Name is required"
+                            ]
+                        },
+                        {
+                            "key": "Description",
+                            "label": "Description",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "Description is required"
+                            ]
+                        },
+                        {
+                            "key": "CriteriaForNextStage",
+                            "label": "CriteriaForNextStage",
+                            "type": "text",
+                                "editable": true,
+                                "validators": [
+                                    "required"
+                                ],
+                                "validationMessages": [
+                                    "CriteriaForNextStage is required"
+                                ]
+                            }
+        ]
+,        "investor": [
+                        {
+                            "key": "InvestorId",
+                            "type": "keyid"
+                        },
+                        {
+                            "key": "Name",
+                            "label": "Name",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "Name is required"
+                            ]
+                        },
+                        {
+                            "key": "ContactNumber",
+                            "label": "ContactNumber",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "ContactNumber is required"
+                            ]
+                        },
+                        {
+                            "key": "PortfolioSize",
+                            "label": "PortfolioSize",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "PortfolioSize is required"
+                            ]
+                        },
+                        {
+                            "key": "InvestmentPreferences",
+                            "label": "InvestmentPreferences",
+                            "type": "text",
+                                "editable": true,
+                                "validators": [
+                                    "required"
+                                ],
+                                "validationMessages": [
+                                    "InvestmentPreferences is required"
+                                ]
+                            }
+        ]
+,        "founder": [
+                        {
+                            "key": "FId",
+                            "type": "keyid"
+                        },
+                        {
+                            "key": "Name",
+                            "label": "Name",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "Name is required"
+                            ]
+                        },
+                        {
+                            "key": "Role",
+                            "label": "Role",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "Role is required"
+                            ]
+                        },
+                        {
+                            "key": "Bio",
+                            "label": "Bio",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "Bio is required"
+                            ]
+                        },
+                        {
+                            "key": "ContactNumber",
+                            "label": "ContactNumber",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "ContactNumber is required"
+                            ]
+                        },
+                        {
+                            "key": "LinkedInProfile",
+                            "label": "LinkedInProfile",
+                            "type": "text",
+                                "editable": true,
+                                "validators": [
+                                    "required"
+                                ],
+                                "validationMessages": [
+                                    "LinkedInProfile is required"
+                                ]
+                            }
+        ]
+,        "startup": [
+                        {
+                            "key": "SId",
+                            "type": "keyid"
+                        },
+                        {
+                            "key": "Name",
+                            "label": "Name",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "Name is required"
+                            ]
+                        },
+                        {
+                            "key": "Industry",
+                            "label": "Industry",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "Industry is required"
+                            ]
+                        },
+                        {
+                            "key": "FoundingDate",
+                            "label": "FoundingDate",
+                            "type": "date",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "FoundingDate is required"
+                            ]
+                        },
+                        {
+                            "key": "FundingReceived",
+                            "label": "FundingReceived",
+                            "type": "dropdown",
+                            "valueId": "Value",
+                            "nameId": "Name",
+                            "contentId": "Name",
+                            "source": "Edm.Decimal",
+                            "editable": true,
+                            "validators": [
+                                "required",
+                                "isNumber"
+                            ],
+                            "validationMessages": [
+                                "FundingReceived is required"
+                            ]
+                        },
+                        {
+                            "key": "ContactNumber",
+                            "label": "ContactNumber",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "ContactNumber is required"
+                            ]
+                        },
+                        {
+                            "key": "Valuation",
+                            "label": "Valuation",
+                            "type": "dropdown",
+                            "valueId": "Value",
+                            "nameId": "Name",
+                            "contentId": "Name",
+                            "source": "Edm.Decimal",
+                            "editable": true,
+                            "validators": [
+                                "required",
+                                "isNumber"
+                            ],
+                            "validationMessages": [
+                                "Valuation is required"
+                            ]
+                        },
+                        {
+                            "key": "KeyMetrics",
+                            "label": "KeyMetrics",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "KeyMetrics is required"
+                            ]
+                        },
+                    {
+                        "key": "StartupCurrentStage",
+                        "type": "keyid"
+                    },
+                                    {
+                        "key": "StartupFounders",
+                        "type": "keyid"
+                    },
+                                    {
+                        "key": "StartupPreviousRounds",
+                        "type": "keyid"
+                    },
+                                    {
+                        "key": "StartupLogo",
+                        "type": "keyid"
+                    },
+                    {
+                        "key": "Logo",
+                        "label": "Logo",
+                        "width": "30%",
+                        "type": "doc",
+                        "accept": ".JPG,.JPEG,.PNG",
+                        "editable": true,
+                        "validators": [
+                            "required"
+                        ],
+                        "validationMessages": [
+                            "Startup Logo is required"
+                        ]
+                    }
+                        ]
+}

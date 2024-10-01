@@ -1,0 +1,138 @@
+{
+
+"startup": [
+    {
+        "key": "SId",
+        "type": "keyid",
+        "UIComponentTitle": "Startup"
+    }
+    
+    ,{
+        "key": "Logo",
+        "label": "Logo",
+        "type": "doc",
+        "accept": ".JPG,.JPEG,.PNG,.PDF,.TXT,.DOC,.DOCX,.XLS,.XLSX",
+        "width": "30%",
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+    ,{
+        "key": "Name",
+        "label": "Name",
+        "type": "text",
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+    ,{
+        "key": "Industry",
+        "label": "Industry",
+        "type": "text",
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+    ,{
+        "key": "FoundingDate",
+        "label": "FoundingDate",
+        "type": "date",
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+    ,{
+        "key": "FundingReceived",
+        "label": "FundingReceived",
+        "type": "text",
+        "editable": true,
+        "validators": [
+             "isFloat"
+, "isPositive"
+        ]
+                            }
+    ,{
+        "key": "ContactNumber",
+        "label": "ContactNumber",
+        "type": "text",
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+    ,{
+        "key": "Valuation",
+        "label": "Valuation",
+        "type": "text",
+        "editable": true,
+        "validators": [
+             "isFloat"
+, "isPositive"
+        ]
+                            }
+    ,{
+        "key": "StartupCurrentStage",
+        "label": "CurrentStage",
+        "type": "dropdown",
+        "valueId": "StageId",
+        "nameId": "Name",
+        "contentId": "Name",
+        "source": "Stage",
+        "create": true,
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+]
+
+,"founderfounders": [
+    {
+        "key": "FId",
+        "type": "keyid",
+        "UIComponentTitle": "Founder",
+        "child": true,
+        "parent": "founder",
+        "property": "Founders",
+        "values": []
+    }
+    ,{
+        "key": "Name",
+        "label": "Name",
+        "type": "text",
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+    ,{
+        "key": "Role",
+        "label": "Role",
+        "type": "text",
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+    ,{
+        "key": "Bio",
+        "label": "Bio",
+        "type": "text",
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+    ,{
+        "key": "ContactNumber",
+        "label": "ContactNumber",
+        "type": "text",
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+    ,{
+        "key": "LinkedInProfile",
+        "label": "LinkedInProfile",
+        "type": "text",
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+]
+}

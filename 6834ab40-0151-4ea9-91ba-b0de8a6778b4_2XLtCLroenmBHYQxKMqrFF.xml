@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Model">
+            <EntityType HasStream="false" Name="Stage">
+                <Key>
+                    <PropertyRef Name="StageId"/>
+                </Key>
+                <Property Name="StageId" Type="Edm.Int32" isUnique="false"/>
+                <Property Name="Name" Type="Model.StageName" isUnique="false"/>
+                <Property Name="Description" Type="Edm.String" isUnique="false"/>
+                <Property Name="CriteriaForNextStage" Type="Edm.String" isUnique="false"/>
+            </EntityType>
+            <EntityType HasStream="false" Name="Startup">
+                <Key>
+                    <PropertyRef Name="SId"/>
+                </Key>
+                <Property Name="SId" Type="Edm.Int32" isUnique="false"/>
+                <Property Name="Name" Type="Edm.String" isUnique="false"/>
+                <Property Name="Industry" Type="Edm.String" isUnique="false"/>
+                <Property Name="FoundingDate" Type="Edm.Date" isUnique="false"/>
+                <Property Name="FundingReceived" Type="Edm.Decimal" isUnique="false"/>
+                <Property Name="ContactNumber" Type="Edm.String" isUnique="false"/>
+                <Property Name="Valuation" Type="Edm.Decimal" isUnique="false"/>
+                <Property Name="KeyMetrics" Type="Collection(Edm.String)" isUnique="false"/>
+                <NavigationProperty Name="CurrentStage" Type="Model.Stage"/>
+                <NavigationProperty Name="Founders" Type="Collection(Model.Founder)"/>
+                <NavigationProperty Name="PreviousRounds" Type="Collection(Model.FundingRound)"/>
+                <NavigationProperty Name="Logo" Type="Model.Document"/>
+            </EntityType>
+            <EntityType HasStream="false" Name="FundingRound">
+                <Key>
+                    <PropertyRef Name="RoundId"/>
+                </Key>
+                <Property Name="RoundId" Type="Edm.Int32" isUnique="false"/>
+                <Property Name="RoundType" Type="Model.StageName" isUnique="false"/>
+                <Property Name="DateOfFunding" Type="Edm.Date" isUnique="false"/>
+                <Property Name="AmountRaised" Type="Edm.Decimal" isUnique="false"/>
+                <Property Name="Status" Type="Model.RoundStatus" isUnique="false"/>
+                <Property Name="TargetAmount" Type="Edm.Decimal" isUnique="false"/>
+                <Property Name="PostValuation" Type="Edm.Decimal" isUnique="false"/>
+                <NavigationProperty Name="LeadInvestor" Type="Model.Investor"/>
+                <NavigationProperty Name="Investors" Type="Collection(Model.Investor)"/>
+                <NavigationProperty Name="FundedStartup" Type="Model.Startup"/>
+                <NavigationProperty Name="StartupLogoIcon" Type="Model.Document"/>
+            </EntityType>
+            <EntityType HasStream="false" Name="Founder">
+                <Key>
+                    <PropertyRef Name="FId"/>
+                </Key>
+                <Property Name="FId" Type="Edm.Int32" isUnique="false"/>
+                <Property Name="Name" Type="Edm.String" isUnique="false"/>
+                <Property Name="Role" Type="Edm.String" isUnique="false"/>
+                <Property Name="Bio" Type="Edm.String" isUnique="false"/>
+                <Property Name="ContactNumber" Type="Edm.String" isUnique="false"/>
+                <Property Name="LinkedInProfile" Type="Edm.String" isUnique="false"/>
+            </EntityType>
+            <EntityType HasStream="true" Name="Document">
+                <Key>
+                    <PropertyRef Name="DocId"/>
+                </Key>
+                <Property Name="DocId" Type="Edm.Int32" isUnique="false"/>
+                <Property Name="Name" Type="Edm.String" isUnique="false"/>
+                <Property Name="Type" Type="Edm.String" isUnique="false"/>
+                <Property Name="Description" Type="Edm.String" isUnique="false"/>
+                <Property Name="Date" Type="Edm.Date" isUnique="false"/>
+            </EntityType>
+            <EntityType HasStream="false" Name="Investor">
+                <Key>
+                    <PropertyRef Name="InvestorId"/>
+                </Key>
+                <Property Name="InvestorId" Type="Edm.Int32" isUnique="false"/>
+                <Property Name="Name" Type="Edm.String" isUnique="false"/>
+                <Property Name="ContactNumber" Type="Edm.String" isUnique="false"/>
+                <Property Name="PortfolioSize" Type="Edm.String" isUnique="false"/>
+                <Property Name="InvestmentPreferences" Type="Collection(Edm.String)" isUnique="false"/>
+            </EntityType>
+            <EntityContainer Name="Container">
+                <EntitySet Name="Stages" EntityType="Model.Stage"/>
+                <EntitySet Name="Startups" EntityType="Model.Startup">
+                    <NavigationPropertyBinding Path="CurrentStage" Target="Stages"/>
+                    <NavigationPropertyBinding Path="Founders" Target="Founders"/>
+                    <NavigationPropertyBinding Path="PreviousRounds" Target="FundingRounds"/>
+                    <NavigationPropertyBinding Path="Logo" Target="Documents"/>
+                </EntitySet>
+                <EntitySet Name="FundingRounds" EntityType="Model.FundingRound">
+                    <NavigationPropertyBinding Path="LeadInvestor" Target="Investors"/>
+                    <NavigationPropertyBinding Path="Investors" Target="Investors"/>
+                    <NavigationPropertyBinding Path="FundedStartup" Target="Startups"/>
+                    <NavigationPropertyBinding Path="StartupLogoIcon" Target="Documents"/>
+                </EntitySet>
+                <EntitySet Name="Founders" EntityType="Model.Founder"/>
+                <EntitySet Name="Documents" EntityType="Model.Document"/>
+                <EntitySet Name="Investors" EntityType="Model.Investor"/>
+            </EntityContainer>
+            <EnumType Name="RoundStatus">
+                <Member Name="Planned" Value="0"/>
+                <Member Name="Open" Value="1"/>
+                <Member Name="Closed" Value="2"/>
+                <Member Name="OverSubscribed" Value="3"/>
+                <Member Name="Cancelled" Value="4"/>
+                <Member Name="Paused" Value="5"/>
+            </EnumType>
+            <EnumType Name="StageName">
+                <Member Name="PreSeed" Value="0"/>
+                <Member Name="Seed" Value="1"/>
+                <Member Name="SeriesA" Value="2"/>
+                <Member Name="SeriesB" Value="3"/>
+            </EnumType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
